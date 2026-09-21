@@ -33,13 +33,15 @@ public class MultiplyOf2DArray {
 
                 }
             }
-            for (int i = 0; i < r1; i++) {
-                for (int j = 0; j < c2; j++) {
-                    for (int k = 0; k < r2; k++) {
+            for (int i = 0; i < r1; i++) { //Outer loop iterates through rows of matrix 1 (r1)
+                for (int j = 0; j < c2; j++) { //Middle loop iterates through columns of matrix 2 (c2)
+                    for (int k = 0; k < c1; k++) { //Inner loop iterates through the shared dimension (c1 or r2)
                         product[i][j] += matrix1[i][k] * matrix2[k][j];
                      }
                     }
+
             }
+            System.out.println("product of the Matrices is ");
             for (int i = 0; i < r1; i++) {
                 for (int j = 0; j < c2; j++) {
                           System.out.print(product[i][j] + " ");
@@ -49,7 +51,7 @@ public class MultiplyOf2DArray {
 
             }
                  else{
-                System.out.println("array not found");
+                System.out.println("multiplication not possible because cols of matrix1 must equal row of matrix 2");
 
             }
         }
